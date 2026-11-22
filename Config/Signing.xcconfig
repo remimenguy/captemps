@@ -1,0 +1,4 @@
+CAPTEMPS_BUNDLE_ID = com.example.captemps
+CAPTEMPS_APP_GROUP = group.com.example.captemps
+
+#include? "Signing.local.xcconfig"

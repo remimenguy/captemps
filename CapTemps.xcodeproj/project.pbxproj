@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B2CE195361EC46084BFE336 /* BlockPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4147D65D3161BA11E690D /* BlockPhase.swift */; };
+		262928F40F4ADCF79F107B2B /* RuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */; };
+		9E81AA9C72CA29B4BAF6633F /* BlockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DBEFAA52C7DF922C018B1B /* BlockRule.swift */; };
+		9F531214AFB49AAB553995EA /* CapTempsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F4E67346FD464130FEF7 /* CapTempsApp.swift */; };
+		C21B7320DDE8D9C4F9D62AEE /* CapTempsMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 45487B3E9D8345E24EB2CF69 /* CapTempsMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C332E6F8407E6AD4C01889E0 /* BlockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41B4FE0652467B563C3EE5 /* BlockController.swift */; };
+		D8F305DB2809DC01EC84AD54 /* ActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631573AA897EDF780B0339B8 /* ActivityMonitor.swift */; };
+		DC510641FE6B7FC1A6D0F510 /* RuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */; };
+		E7A62744F8A1326E55A83BC1 /* BlockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DBEFAA52C7DF922C018B1B /* BlockRule.swift */; };
+		EC33176EF9622971391CCD0B /* BlockPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4147D65D3161BA11E690D /* BlockPhase.swift */; };
+		F592AAF89C462EED1FAB7B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3308D1FB61E8FAB612643D9 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		51D0CB971D038B968786EA51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5170A81BD742CA7DF0E9BC40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFBA5A54A594BD18C2348EB9;
+			remoteInfo = CapTempsMonitor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55A0E3D0D4457B9BC0BB008F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C21B7320DDE8D9C4F9D62AEE /* CapTempsMonitor.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01DBEFAA52C7DF922C018B1B /* BlockRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockRule.swift; sourceTree = "<group>"; };
+		42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleStore.swift; sourceTree = "<group>"; };
+		45487B3E9D8345E24EB2CF69 /* CapTempsMonitor.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CapTempsMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		631573AA897EDF780B0339B8 /* ActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonitor.swift; sourceTree = "<group>"; };
+		64793A7538A1FCA5AC4FF3F6 /* CapTemps.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CapTemps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		821FBBD1B91DEDF351B61FE2 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
+		8CFDC9A52E0A516E839E99DD /* CapTemps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapTemps.entitlements; sourceTree = "<group>"; };
+		9B159C171D2255111D041A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A3308D1FB61E8FAB612643D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A86B15C819D2A278AAD26A7F /* CapTempsMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapTempsMonitor.entitlements; sourceTree = "<group>"; };
+		A9A4147D65D3161BA11E690D /* BlockPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPhase.swift; sourceTree = "<group>"; };
+		AE41B4FE0652467B563C3EE5 /* BlockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockController.swift; sourceTree = "<group>"; };
+		B4A5F4E67346FD464130FEF7 /* CapTempsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapTempsApp.swift; sourceTree = "<group>"; };
+		BB14456E82BA5C6CDC716F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2244A646E8DD2FD49328D91A = {
+			isa = PBXGroup;
+			children = (
+				42FFA8857269BE0CEDD975D5 /* App */,
+				52CEB866DB62B49355E495CF /* Config */,
+				8629AA7913C9230BE536EE96 /* Monitor */,
+				687EB9A0E4B5082275E9FC1D /* Shared */,
+				7E81D93AC73F336C74EE97B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42FFA8857269BE0CEDD975D5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A3308D1FB61E8FAB612643D9 /* Assets.xcassets */,
+				AE41B4FE0652467B563C3EE5 /* BlockController.swift */,
+				8CFDC9A52E0A516E839E99DD /* CapTemps.entitlements */,
+				B4A5F4E67346FD464130FEF7 /* CapTempsApp.swift */,
+				BB14456E82BA5C6CDC716F03 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		52CEB866DB62B49355E495CF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				821FBBD1B91DEDF351B61FE2 /* Signing.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		687EB9A0E4B5082275E9FC1D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4147D65D3161BA11E690D /* BlockPhase.swift */,
+				01DBEFAA52C7DF922C018B1B /* BlockRule.swift */,
+				42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7E81D93AC73F336C74EE97B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64793A7538A1FCA5AC4FF3F6 /* CapTemps.app */,
+				45487B3E9D8345E24EB2CF69 /* CapTempsMonitor.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8629AA7913C9230BE536EE96 /* Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				631573AA897EDF780B0339B8 /* ActivityMonitor.swift */,
+				A86B15C819D2A278AAD26A7F /* CapTempsMonitor.entitlements */,
+				9B159C171D2255111D041A46 /* Info.plist */,
+			);
+			path = Monitor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96BEA640B7232CE2585E38C7 /* CapTemps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D520893941AAA9A70DC191DC /* Build configuration list for PBXNativeTarget "CapTemps" */;
+			buildPhases = (
+				76A17D4B4BFA7458452E19C1 /* Sources */,
+				134292433D17ABBC0E270C27 /* Resources */,
+				55A0E3D0D4457B9BC0BB008F /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05515DE6460F235BD4ECC9B6 /* PBXTargetDependency */,
+			);
+			name = CapTemps;
+			packageProductDependencies = (
+			);
+			productName = CapTemps;
+			productReference = 64793A7538A1FCA5AC4FF3F6 /* CapTemps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFBA5A54A594BD18C2348EB9 /* CapTempsMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46385B99F2AABEDA5A0DCD14 /* Build configuration list for PBXNativeTarget "CapTempsMonitor" */;
+			buildPhases = (
+				E7C74E989A4ACB06B1E09517 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CapTempsMonitor;
+			packageProductDependencies = (
+			);
+			productName = CapTempsMonitor;
+			productReference = 45487B3E9D8345E24EB2CF69 /* CapTempsMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5170A81BD742CA7DF0E9BC40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					96BEA640B7232CE2585E38C7 = {
+						ProvisioningStyle = Automatic;
+					};
+					DFBA5A54A594BD18C2348EB9 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 56E834FF22B0506E9901282B /* Build configuration list for PBXProject "CapTemps" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2244A646E8DD2FD49328D91A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7E81D93AC73F336C74EE97B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96BEA640B7232CE2585E38C7 /* CapTemps */,
+				DFBA5A54A594BD18C2348EB9 /* CapTempsMonitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		134292433D17ABBC0E270C27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F592AAF89C462EED1FAB7B07 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76A17D4B4BFA7458452E19C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C332E6F8407E6AD4C01889E0 /* BlockController.swift in Sources */,
+				0B2CE195361EC46084BFE336 /* BlockPhase.swift in Sources */,
+				9E81AA9C72CA29B4BAF6633F /* BlockRule.swift in Sources */,
+				9F531214AFB49AAB553995EA /* CapTempsApp.swift in Sources */,
+				262928F40F4ADCF79F107B2B /* RuleStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C74E989A4ACB06B1E09517 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F305DB2809DC01EC84AD54 /* ActivityMonitor.swift in Sources */,
+				EC33176EF9622971391CCD0B /* BlockPhase.swift in Sources */,
+				E7A62744F8A1326E55A83BC1 /* BlockRule.swift in Sources */,
+				DC510641FE6B7FC1A6D0F510 /* RuleStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05515DE6460F235BD4ECC9B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFBA5A54A594BD18C2348EB9 /* CapTempsMonitor */;
+			targetProxy = 51D0CB971D038B968786EA51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02B1E4E0406740F24C9B9E39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/CapTemps.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CapTemps;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74B040028E4BBA70AE3F5CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 821FBBD1B91DEDF351B61FE2 /* Signing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7C540BF51DDA2C5C1BC0E254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Monitor/CapTempsMonitor.entitlements;
+				INFOPLIST_FILE = Monitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID).monitor";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D7C4E0F7BBDE13F64AEF76C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/CapTemps.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CapTemps;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		917748FCF2B252EAA12055E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 821FBBD1B91DEDF351B61FE2 /* Signing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BD0780D2EF6A200ED2E7F87D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Monitor/CapTempsMonitor.entitlements;
+				INFOPLIST_FILE = Monitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID).monitor";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46385B99F2AABEDA5A0DCD14 /* Build configuration list for PBXNativeTarget "CapTempsMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C540BF51DDA2C5C1BC0E254 /* Debug */,
+				BD0780D2EF6A200ED2E7F87D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		56E834FF22B0506E9901282B /* Build configuration list for PBXProject "CapTemps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				917748FCF2B252EAA12055E4 /* Debug */,
+				74B040028E4BBA70AE3F5CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D520893941AAA9A70DC191DC /* Build configuration list for PBXNativeTarget "CapTemps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02B1E4E0406740F24C9B9E39 /* Debug */,
+				7D7C4E0F7BBDE13F64AEF76C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5170A81BD742CA7DF0E9BC40 /* Project object */;
+}
