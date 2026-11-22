@@ -7,6 +7,8 @@ enum BlockPhase: Codable, Equatable {
     case bonus(until: Date)
     case locked
 
+    var canGrantBonus: Bool { self == .blocked }
+
     var isShielded: Bool {
         switch self {
         case .blocked, .settingUpBonus, .locked: true
@@ -19,7 +21,7 @@ enum BlockPhase: Codable, Equatable {
     }
 
     mutating func beginBonus(until: Date) -> Bool {
-        guard self == .blocked else { return false }
+        guard canGrantBonus else { return false }
         self = .settingUpBonus(until: until)
         return true
     }

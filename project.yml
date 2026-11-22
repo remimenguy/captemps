@@ -10,7 +10,7 @@ settings:
   base:
     CODE_SIGN_STYLE: Automatic
     SWIFT_VERSION: "5.0"
-    CURRENT_PROJECT_VERSION: 2
+    CURRENT_PROJECT_VERSION: 3
     MARKETING_VERSION: "1.0"
     TARGETED_DEVICE_FAMILY: 1
     SUPPORTS_MACCATALYST: NO
@@ -44,6 +44,10 @@ targets:
     dependencies:
       - target: CapTempsMonitor
         embed: true
+      - target: CapTempsShieldConfiguration
+        embed: true
+      - target: CapTempsShieldAction
+        embed: true
 
   CapTempsMonitor:
     type: app-extension
@@ -66,6 +70,48 @@ targets:
         NSExtension:
           NSExtensionPointIdentifier: com.apple.deviceactivity.monitor-extension
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ActivityMonitor
+
+  CapTempsShieldConfiguration:
+    type: app-extension
+    platform: iOS
+    sources: [ShieldConfiguration, Shared]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(CAPTEMPS_BUNDLE_ID).shield-configuration
+        APPLICATION_EXTENSION_API_ONLY: YES
+    entitlements:
+      path: ShieldConfiguration/CapTempsShieldConfiguration.entitlements
+      properties: *sharedCapabilities
+    info:
+      path: ShieldConfiguration/Info.plist
+      properties:
+        CapTempsAppGroup: $(CAPTEMPS_APP_GROUP)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettingsUI.shield-configuration-service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShieldAppearance
+
+  CapTempsShieldAction:
+    type: app-extension
+    platform: iOS
+    sources: [ShieldAction, Shared]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(CAPTEMPS_BUNDLE_ID).shield-action
+        APPLICATION_EXTENSION_API_ONLY: YES
+    entitlements:
+      path: ShieldAction/CapTempsShieldAction.entitlements
+      properties: *sharedCapabilities
+    info:
+      path: ShieldAction/Info.plist
+      properties:
+        CapTempsAppGroup: $(CAPTEMPS_APP_GROUP)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettings.shield-action-service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShieldActionHandler
 
 schemes:
   CapTemps:

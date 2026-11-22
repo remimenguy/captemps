@@ -17,7 +17,7 @@ Open CapTemps, tap **Allow CapTemps**, and select an app in Apple’s activity p
 | Stage | What happens |
 | --- | --- |
 | **Before the first block** | iOS tracks the selected app against its daily limit. |
-| **First block** | iOS shields the app. Open CapTemps to use **+ 5 minutes** once for that app. |
+| **First block** | iOS shields the app. Tap **+ 5 Minutes** on the shield to extend usage once for that app. |
 | **After the extension** | The shield returns after five minutes of use or 24 hours, whichever comes first. The block has no automatic reset. |
 
 CapTemps supports up to 20 app rules. It has no in-app control for removing a locked rule. The shield continues to work while CapTemps is closed, as long as iOS grants it Screen Time access.
@@ -26,7 +26,7 @@ CapTemps supports up to 20 app rules. It has no in-app control for removing a lo
 
 With [individual authorization](https://developer.apple.com/documentation/familycontrols/authorizationcenter/requestauthorization%28for%3A%29), the device owner can revoke Screen Time access in iOS Settings. To protect against deletion, set a [Screen Time passcode](https://support.apple.com/en-gb/guide/iphone/iph272b4c4bd/26/ios/26) and set **Settings → Screen Time → Content & Privacy Restrictions → iTunes & App Store Purchases → Deleting Apps** to **Don’t Allow**. This setting applies to all apps. [Apple’s guide to app and purchase restrictions](https://support.apple.com/guide/iphone/block-apps-app-downloads-websites-purchases-iph3ff83f3b1/ios)
 
-CapTemps stores rules and opaque app tokens on the device. The app and its monitor extension share those rules through an App Group. CapTemps has no account, server, analytics, or network requests.
+CapTemps stores rules and opaque app tokens on the device. The app and its extensions share those rules through an App Group. CapTemps has no account, server, analytics, or network requests.
 
 ## Build and run
 
@@ -40,10 +40,10 @@ You need a Mac with Xcode and the iOS 26.4 SDK or newer. The app runs on **iOS 1
    CAPTEMPS_APP_GROUP = group.com.yourcompany.captemps
    ```
 
-2. In your Apple Developer account, enable **Family Controls (Development)** and **App Groups** for both the app identifier and the extension identifier, which adds `.monitor` to the app identifier. Assign both to the same App Group. [Apple’s Family Controls setup guide](https://developer.apple.com/documentation/xcode/configuring-family-controls)
+2. In your Apple Developer account, enable **Family Controls (Development)** and **App Groups** for the app and its three extensions. The extension identifiers end in `.monitor`, `.shield-configuration`, and `.shield-action`. Assign all four targets to the same App Group. [Apple’s Family Controls setup guide](https://developer.apple.com/documentation/xcode/configuring-family-controls)
 3. Open [CapTemps.xcodeproj](CapTemps.xcodeproj), select the **CapTemps** scheme and your iPhone, then choose **Run**. Approve Screen Time access on the device.
 
-The checked-in Xcode project is ready to open. If you change [project.yml](project.yml), regenerate it with `xcodegen generate`. TestFlight and App Store distribution require Apple’s approval for Family Controls on both targets. [Apple’s distribution entitlement guide](https://developer.apple.com/documentation/familycontrols/requesting-the-family-controls-entitlement)
+The checked-in Xcode project is ready to open. If you change [project.yml](project.yml), regenerate it with `xcodegen generate`. TestFlight and App Store distribution require Apple’s approval for Family Controls on the app and all three extensions. [Apple’s distribution entitlement guide](https://developer.apple.com/documentation/familycontrols/requesting-the-family-controls-entitlement)
 
 ## Verify
 
@@ -53,4 +53,4 @@ Run the block and extension state tests on a Mac.
 ./Tests/run-tests.sh
 ```
 
-For an on-device check, choose a test app and give it a one-minute limit. Use the app until the shield appears, activate **+ 5 minutes**, then resume using it. Confirm that the shield returns and that CapTemps no longer offers another extension for that app.
+For an on-device check, choose a test app and give it a one-minute limit. Use the app until the shield appears, tap **+ 5 Minutes** on the shield, then resume using the app. Confirm that the shield returns with only **OK**.

@@ -16,38 +16,40 @@ struct BlockController {
 
     func refresh() throws -> [BlockRule] {
         try requireAuthorization()
-        let activities = Set(center.activities)
-        let now = Date()
+        return try store.withBonusLock {
+            let activities = Set(center.activities)
+            let now = Date()
 
-        let rules = try store.update { rules in
-            for index in rules.indices {
-                switch rules[index].phase {
-                case .tracking where !activities.contains(rules[index].dailyActivity):
-                    rules[index].phase.reachLimit()
-                case .settingUpBonus:
-                    // Setup runs synchronously on the main actor. Finding it here means it was interrupted.
-                    rules[index].phase.finishBonus()
-                case .bonus where !activities.contains(rules[index].bonusActivity):
-                    rules[index].phase.finishBonus()
-                case .bonus:
-                    rules[index].phase.expireBonus(at: now)
-                default:
-                    break
+            let rules = try store.update { rules in
+                for index in rules.indices {
+                    switch rules[index].phase {
+                    case .tracking where !activities.contains(rules[index].dailyActivity):
+                        rules[index].phase.reachLimit()
+                    case .settingUpBonus:
+                        // No other process can be setting up the bonus while this lock is held.
+                        rules[index].phase.finishBonus()
+                    case .bonus where !activities.contains(rules[index].bonusActivity):
+                        rules[index].phase.finishBonus()
+                    case .bonus:
+                        rules[index].phase.expireBonus(at: now)
+                    default:
+                        break
+                    }
                 }
+                return rules
             }
+
+            let needed = Set(rules.compactMap { rule -> DeviceActivityName? in
+                switch rule.phase {
+                case .tracking: rule.dailyActivity
+                case .bonus: rule.bonusActivity
+                default: nil
+                }
+            })
+            let obsolete = activities.subtracting(needed)
+            if !obsolete.isEmpty { center.stopMonitoring(Array(obsolete)) }
             return rules
         }
-
-        let needed = Set(rules.compactMap { rule -> DeviceActivityName? in
-            switch rule.phase {
-            case .tracking: rule.dailyActivity
-            case .bonus: rule.bonusActivity
-            default: nil
-            }
-        })
-        let obsolete = activities.subtracting(needed)
-        if !obsolete.isEmpty { center.stopMonitoring(Array(obsolete)) }
-        return rules
     }
 
     func add(application: ApplicationToken, minutes: Int) throws {
@@ -69,8 +71,13 @@ struct BlockController {
             repeats: true
         )
         do {
-            try start(rule.dailyActivity, schedule: schedule, event: BlockRule.dailyLimitEvent,
-                      application: application, minutes: minutes)
+            try center.startMonitoring(rule.dailyActivity, during: schedule, events: [
+                BlockRule.dailyLimitEvent: DeviceActivityEvent(
+                    applications: [application],
+                    threshold: DateComponents(minute: minutes),
+                    includesPastActivity: false
+                )
+            ])
         } catch {
             try store.update { rules in
                 rules.removeAll { $0.id == rule.id && $0.phase == .tracking }
@@ -79,63 +86,12 @@ struct BlockController {
         }
     }
 
-    func grantBonus(for id: UUID) throws {
-        _ = try refresh()
-        let now = Date()
-        let until = now.addingTimeInterval(24 * 60 * 60)
-        let rule = try store.update { rules in
-            guard let index = rules.firstIndex(where: { $0.id == id }),
-                  rules[index].phase.beginBonus(until: until) else {
-                throw RuleError.bonusUnavailable
-            }
-            return rules[index]
-        }
-
-        // Use a single window across midnight. Keep the shield up until monitoring is registered.
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = .gmt
-        let components: Set<Calendar.Component> = [.calendar, .timeZone, .year, .month, .day, .hour, .minute, .second]
-        let schedule = DeviceActivitySchedule(
-            intervalStart: calendar.dateComponents(components, from: now.addingTimeInterval(-1)),
-            intervalEnd: calendar.dateComponents(components, from: until),
-            repeats: false
-        )
-        do {
-            try start(rule.bonusActivity, schedule: schedule, event: BlockRule.bonusLimitEvent,
-                      application: rule.application, minutes: BlockRule.bonusMinutes)
-        } catch {
-            try store.update { rules in
-                if let index = rules.firstIndex(where: { $0.id == id }) {
-                    rules[index].phase.cancelBonusSetup()
-                }
-            }
-            throw error
-        }
-
-        try store.update { rules in
-            if let index = rules.firstIndex(where: { $0.id == id }) {
-                rules[index].phase.activateBonus()
-            }
-        }
+    func grantBonus(for application: ApplicationToken) throws {
+        try requireAuthorization()
+        try BonusController().grant(for: application)
     }
 
     private func requireAuthorization() throws {
         guard Self.isAuthorized else { throw RuleError.authorizationRequired }
-    }
-
-    private func start(
-        _ activity: DeviceActivityName,
-        schedule: DeviceActivitySchedule,
-        event: DeviceActivityEvent.Name,
-        application: ApplicationToken,
-        minutes: Int
-    ) throws {
-        try center.startMonitoring(activity, during: schedule, events: [
-            event: DeviceActivityEvent(
-                applications: [application],
-                threshold: DateComponents(minute: minutes),
-                includesPastActivity: false
-            )
-        ])
     }
 }

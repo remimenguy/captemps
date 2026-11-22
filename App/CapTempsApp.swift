@@ -130,8 +130,8 @@ private struct ContentView: View {
                     Text(status(for: rule))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                    if rule.phase == .blocked {
-                        Button("+ 5 minutes") { grantBonus(for: rule.id) }
+                    if rule.phase.canGrantBonus {
+                        Button("+ 5 minutes") { grantBonus(for: rule.application) }
                             .buttonStyle(.borderless)
                     }
                 }
@@ -162,8 +162,8 @@ private struct ContentView: View {
         }
     }
 
-    private func grantBonus(for id: UUID) {
-        perform { try controller.grantBonus(for: id) }
+    private func grantBonus(for application: ApplicationToken) {
+        perform { try controller.grantBonus(for: application) }
     }
 
     private func perform(_ action: () throws -> Void) {

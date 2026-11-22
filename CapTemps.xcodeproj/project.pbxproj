@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05BE18B16F28D8A9AB071993 /* BonusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DCA9B6B484D71E29C7FAC /* BonusController.swift */; };
 		0B2CE195361EC46084BFE336 /* BlockPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4147D65D3161BA11E690D /* BlockPhase.swift */; };
+		10F30A55DA088BB2FCFED24B /* BlockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DBEFAA52C7DF922C018B1B /* BlockRule.swift */; };
+		1E04CE4826756590EB3006E4 /* RuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */; };
 		262928F40F4ADCF79F107B2B /* RuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */; };
+		601FF16F466CB0387438B1BC /* BonusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DCA9B6B484D71E29C7FAC /* BonusController.swift */; };
+		6E31ED646E106BDA3FA47631 /* BonusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DCA9B6B484D71E29C7FAC /* BonusController.swift */; };
+		7C86330AEB70F9FC2620BEB1 /* CapTempsShieldAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D8DA1065225D6F9110989B96 /* CapTempsShieldAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		829A8B9D7F959B075BAD13F8 /* ShieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E72951CEFDD295C537BFB /* ShieldAppearance.swift */; };
+		855B9883564C8D62A26F1CAC /* CapTempsShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6ABAFA2F20262C9EF65BCDD8 /* CapTempsShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		88278CE5BA48606FA51794EF /* BlockPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4147D65D3161BA11E690D /* BlockPhase.swift */; };
+		8EC13E172A68D80AEC629EBE /* BlockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DBEFAA52C7DF922C018B1B /* BlockRule.swift */; };
+		8F216158B47ED893AC42C39E /* BlockPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A4147D65D3161BA11E690D /* BlockPhase.swift */; };
+		997261D132470F53C902249F /* ShieldActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1846D6B3F4D6110546655 /* ShieldActionHandler.swift */; };
+		9E61CCB5F40AB441E8834AF8 /* BonusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DCA9B6B484D71E29C7FAC /* BonusController.swift */; };
 		9E81AA9C72CA29B4BAF6633F /* BlockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DBEFAA52C7DF922C018B1B /* BlockRule.swift */; };
 		9F531214AFB49AAB553995EA /* CapTempsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F4E67346FD464130FEF7 /* CapTempsApp.swift */; };
+		B8A415500C59B404E6CD6F9E /* RuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */; };
 		C21B7320DDE8D9C4F9D62AEE /* CapTempsMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 45487B3E9D8345E24EB2CF69 /* CapTempsMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C332E6F8407E6AD4C01889E0 /* BlockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41B4FE0652467B563C3EE5 /* BlockController.swift */; };
 		D8F305DB2809DC01EC84AD54 /* ActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631573AA897EDF780B0339B8 /* ActivityMonitor.swift */; };
@@ -28,6 +42,20 @@
 			remoteGlobalIDString = DFBA5A54A594BD18C2348EB9;
 			remoteInfo = CapTempsMonitor;
 		};
+		62CB058629DD0717ED8B81C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5170A81BD742CA7DF0E9BC40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16AB60889C20559E42A4BDE3;
+			remoteInfo = CapTempsShieldConfiguration;
+		};
+		8B1608160B375282FBF5740A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5170A81BD742CA7DF0E9BC40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04ACC0ACF1A93C29341E0D7E;
+			remoteInfo = CapTempsShieldAction;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +66,8 @@
 			dstSubfolderSpec = 13;
 			files = (
 				C21B7320DDE8D9C4F9D62AEE /* CapTempsMonitor.appex in Embed Foundation Extensions */,
+				855B9883564C8D62A26F1CAC /* CapTempsShieldConfiguration.appex in Embed Foundation Extensions */,
+				7C86330AEB70F9FC2620BEB1 /* CapTempsShieldAction.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,10 +76,15 @@
 
 /* Begin PBXFileReference section */
 		01DBEFAA52C7DF922C018B1B /* BlockRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockRule.swift; sourceTree = "<group>"; };
+		105DCA9B6B484D71E29C7FAC /* BonusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusController.swift; sourceTree = "<group>"; };
+		2884AB592FEE11739AD04A90 /* CapTempsShieldAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapTempsShieldAction.entitlements; sourceTree = "<group>"; };
 		42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleStore.swift; sourceTree = "<group>"; };
 		45487B3E9D8345E24EB2CF69 /* CapTempsMonitor.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CapTempsMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		58303F28EE52C44FB79339F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5FE1846D6B3F4D6110546655 /* ShieldActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActionHandler.swift; sourceTree = "<group>"; };
 		631573AA897EDF780B0339B8 /* ActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonitor.swift; sourceTree = "<group>"; };
 		64793A7538A1FCA5AC4FF3F6 /* CapTemps.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CapTemps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ABAFA2F20262C9EF65BCDD8 /* CapTempsShieldConfiguration.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CapTempsShieldConfiguration.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		821FBBD1B91DEDF351B61FE2 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 		8CFDC9A52E0A516E839E99DD /* CapTemps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapTemps.entitlements; sourceTree = "<group>"; };
 		9B159C171D2255111D041A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -57,8 +92,12 @@
 		A86B15C819D2A278AAD26A7F /* CapTempsMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapTempsMonitor.entitlements; sourceTree = "<group>"; };
 		A9A4147D65D3161BA11E690D /* BlockPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPhase.swift; sourceTree = "<group>"; };
 		AE41B4FE0652467B563C3EE5 /* BlockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockController.swift; sourceTree = "<group>"; };
+		B45E72951CEFDD295C537BFB /* ShieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldAppearance.swift; sourceTree = "<group>"; };
 		B4A5F4E67346FD464130FEF7 /* CapTempsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapTempsApp.swift; sourceTree = "<group>"; };
+		BABD27D58355D13A5B94CCE3 /* CapTempsShieldConfiguration.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapTempsShieldConfiguration.entitlements; sourceTree = "<group>"; };
 		BB14456E82BA5C6CDC716F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C15BB5E033E7AF4A92832253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D8DA1065225D6F9110989B96 /* CapTempsShieldAction.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CapTempsShieldAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -69,6 +108,8 @@
 				52CEB866DB62B49355E495CF /* Config */,
 				8629AA7913C9230BE536EE96 /* Monitor */,
 				687EB9A0E4B5082275E9FC1D /* Shared */,
+				A83423590A05039BCABD6027 /* ShieldAction */,
+				607487A941E6A6D36898919F /* ShieldConfiguration */,
 				7E81D93AC73F336C74EE97B0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,11 +134,22 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		607487A941E6A6D36898919F /* ShieldConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				BABD27D58355D13A5B94CCE3 /* CapTempsShieldConfiguration.entitlements */,
+				C15BB5E033E7AF4A92832253 /* Info.plist */,
+				B45E72951CEFDD295C537BFB /* ShieldAppearance.swift */,
+			);
+			path = ShieldConfiguration;
+			sourceTree = "<group>";
+		};
 		687EB9A0E4B5082275E9FC1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				A9A4147D65D3161BA11E690D /* BlockPhase.swift */,
 				01DBEFAA52C7DF922C018B1B /* BlockRule.swift */,
+				105DCA9B6B484D71E29C7FAC /* BonusController.swift */,
 				42204146BA9CDCCCD7BAEE53 /* RuleStore.swift */,
 			);
 			path = Shared;
@@ -108,6 +160,8 @@
 			children = (
 				64793A7538A1FCA5AC4FF3F6 /* CapTemps.app */,
 				45487B3E9D8345E24EB2CF69 /* CapTempsMonitor.appex */,
+				D8DA1065225D6F9110989B96 /* CapTempsShieldAction.appex */,
+				6ABAFA2F20262C9EF65BCDD8 /* CapTempsShieldConfiguration.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,9 +176,53 @@
 			path = Monitor;
 			sourceTree = "<group>";
 		};
+		A83423590A05039BCABD6027 /* ShieldAction */ = {
+			isa = PBXGroup;
+			children = (
+				2884AB592FEE11739AD04A90 /* CapTempsShieldAction.entitlements */,
+				58303F28EE52C44FB79339F4 /* Info.plist */,
+				5FE1846D6B3F4D6110546655 /* ShieldActionHandler.swift */,
+			);
+			path = ShieldAction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		04ACC0ACF1A93C29341E0D7E /* CapTempsShieldAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD4B0F1FD5D9A6497BE85D6E /* Build configuration list for PBXNativeTarget "CapTempsShieldAction" */;
+			buildPhases = (
+				271239EA0467920920FA0C38 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CapTempsShieldAction;
+			packageProductDependencies = (
+			);
+			productName = CapTempsShieldAction;
+			productReference = D8DA1065225D6F9110989B96 /* CapTempsShieldAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		16AB60889C20559E42A4BDE3 /* CapTempsShieldConfiguration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8001EDC7A602696963A3F49 /* Build configuration list for PBXNativeTarget "CapTempsShieldConfiguration" */;
+			buildPhases = (
+				AC0963ECA8AD86758D1D2B89 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CapTempsShieldConfiguration;
+			packageProductDependencies = (
+			);
+			productName = CapTempsShieldConfiguration;
+			productReference = 6ABAFA2F20262C9EF65BCDD8 /* CapTempsShieldConfiguration.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		96BEA640B7232CE2585E38C7 /* CapTemps */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D520893941AAA9A70DC191DC /* Build configuration list for PBXNativeTarget "CapTemps" */;
@@ -137,6 +235,8 @@
 			);
 			dependencies = (
 				05515DE6460F235BD4ECC9B6 /* PBXTargetDependency */,
+				DE5E9E47CC8DE3EE8EA655A0 /* PBXTargetDependency */,
+				20C80CD35CC6FE5D00C9B0E7 /* PBXTargetDependency */,
 			);
 			name = CapTemps;
 			packageProductDependencies = (
@@ -171,6 +271,12 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					04ACC0ACF1A93C29341E0D7E = {
+						ProvisioningStyle = Automatic;
+					};
+					16AB60889C20559E42A4BDE3 = {
+						ProvisioningStyle = Automatic;
+					};
 					96BEA640B7232CE2585E38C7 = {
 						ProvisioningStyle = Automatic;
 					};
@@ -195,6 +301,8 @@
 			targets = (
 				96BEA640B7232CE2585E38C7 /* CapTemps */,
 				DFBA5A54A594BD18C2348EB9 /* CapTempsMonitor */,
+				16AB60889C20559E42A4BDE3 /* CapTempsShieldConfiguration */,
+				04ACC0ACF1A93C29341E0D7E /* CapTempsShieldAction */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +319,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		271239EA0467920920FA0C38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F216158B47ED893AC42C39E /* BlockPhase.swift in Sources */,
+				10F30A55DA088BB2FCFED24B /* BlockRule.swift in Sources */,
+				601FF16F466CB0387438B1BC /* BonusController.swift in Sources */,
+				1E04CE4826756590EB3006E4 /* RuleStore.swift in Sources */,
+				997261D132470F53C902249F /* ShieldActionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76A17D4B4BFA7458452E19C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,8 +338,21 @@
 				C332E6F8407E6AD4C01889E0 /* BlockController.swift in Sources */,
 				0B2CE195361EC46084BFE336 /* BlockPhase.swift in Sources */,
 				9E81AA9C72CA29B4BAF6633F /* BlockRule.swift in Sources */,
+				05BE18B16F28D8A9AB071993 /* BonusController.swift in Sources */,
 				9F531214AFB49AAB553995EA /* CapTempsApp.swift in Sources */,
 				262928F40F4ADCF79F107B2B /* RuleStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC0963ECA8AD86758D1D2B89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88278CE5BA48606FA51794EF /* BlockPhase.swift in Sources */,
+				8EC13E172A68D80AEC629EBE /* BlockRule.swift in Sources */,
+				6E31ED646E106BDA3FA47631 /* BonusController.swift in Sources */,
+				B8A415500C59B404E6CD6F9E /* RuleStore.swift in Sources */,
+				829A8B9D7F959B075BAD13F8 /* ShieldAppearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +363,7 @@
 				D8F305DB2809DC01EC84AD54 /* ActivityMonitor.swift in Sources */,
 				EC33176EF9622971391CCD0B /* BlockPhase.swift in Sources */,
 				E7A62744F8A1326E55A83BC1 /* BlockRule.swift in Sources */,
+				9E61CCB5F40AB441E8834AF8 /* BonusController.swift in Sources */,
 				DC510641FE6B7FC1A6D0F510 /* RuleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +375,16 @@
 			isa = PBXTargetDependency;
 			target = DFBA5A54A594BD18C2348EB9 /* CapTempsMonitor */;
 			targetProxy = 51D0CB971D038B968786EA51 /* PBXContainerItemProxy */;
+		};
+		20C80CD35CC6FE5D00C9B0E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04ACC0ACF1A93C29341E0D7E /* CapTempsShieldAction */;
+			targetProxy = 8B1608160B375282FBF5740A /* PBXContainerItemProxy */;
+		};
+		DE5E9E47CC8DE3EE8EA655A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16AB60889C20559E42A4BDE3 /* CapTempsShieldConfiguration */;
+			targetProxy = 62CB058629DD0717ED8B81C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -261,6 +405,23 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BB6D3BB180C5C3B55EB260F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldAction/CapTempsShieldAction.entitlements;
+				INFOPLIST_FILE = ShieldAction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID).shield-action";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,7 +463,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -402,7 +563,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -452,6 +613,57 @@
 			};
 			name = Release;
 		};
+		C73939749ACFC367CFA66D44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldAction/CapTempsShieldAction.entitlements;
+				INFOPLIST_FILE = ShieldAction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID).shield-action";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE70C953B7783D3CBEEDCFEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldConfiguration/CapTempsShieldConfiguration.entitlements;
+				INFOPLIST_FILE = ShieldConfiguration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID).shield-configuration";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5D659BA7CC2911AEC46344E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldConfiguration/CapTempsShieldConfiguration.entitlements;
+				INFOPLIST_FILE = ShieldConfiguration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAPTEMPS_BUNDLE_ID).shield-configuration";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -469,6 +681,24 @@
 			buildConfigurations = (
 				917748FCF2B252EAA12055E4 /* Debug */,
 				74B040028E4BBA70AE3F5CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C8001EDC7A602696963A3F49 /* Build configuration list for PBXNativeTarget "CapTempsShieldConfiguration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE70C953B7783D3CBEEDCFEE /* Debug */,
+				F5D659BA7CC2911AEC46344E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CD4B0F1FD5D9A6497BE85D6E /* Build configuration list for PBXNativeTarget "CapTempsShieldAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BB6D3BB180C5C3B55EB260F /* Debug */,
+				C73939749ACFC367CFA66D44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

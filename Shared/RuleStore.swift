@@ -23,42 +23,63 @@ enum RuleError: LocalizedError {
 }
 
 struct RuleStore {
-    private let settings = ManagedSettingsStore(named: .init("CapTemps"))
+    func read() throws -> [BlockRule] {
+        // Writers replace the file atomically, so a reader always sees a complete snapshot.
+        try loadRules(from: container().appendingPathComponent("rules.json"))
+    }
+
+    func withBonusLock<Result>(_ operation: () throws -> Result) throws -> Result {
+        let folder = try container()
+        // The app can refresh while the shield action schedules a bonus. Monitor callbacks
+        // still need the rules lock during that operation, so use a separate lock here.
+        return try withLock(at: folder.appendingPathComponent("bonus.lock"), operation)
+    }
 
     func update<Result>(_ change: (inout [BlockRule]) throws -> Result) throws -> Result {
+        let folder = try container()
+        return try withLock(at: folder.appendingPathComponent("rules.lock")) {
+            let rulesURL = folder.appendingPathComponent("rules.json")
+            let previous = try loadRules(from: rulesURL)
+
+            var rules = previous
+            let result = try change(&rules)
+            if rules != previous {
+                try JSONEncoder().encode(rules).write(
+                    to: rulesURL, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication]
+                )
+            }
+            let applications = Set(rules.filter(\.phase.isShielded).map(\.application))
+            let shield: Set<ApplicationToken>? = applications.isEmpty ? nil : applications
+            let settings = ManagedSettingsStore(named: .init("CapTemps"))
+            if settings.shield.applications != shield {
+                settings.shield.applications = shield
+            }
+            return result
+        }
+    }
+
+    private func container() throws -> URL {
         guard let appGroup = Bundle.main.object(forInfoDictionaryKey: "CapTempsAppGroup") as? String,
               let folder = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) else {
             throw RuleError.sharedStorageUnavailable
         }
+        return folder
+    }
 
-        // iOS can run the monitor and app together. Serialize disk and shield changes.
-        let lockURL = folder.appendingPathComponent("rules.lock")
-        let descriptor = open(lockURL.path, O_CREAT | O_RDWR | O_CLOEXEC, 0o600)
+    private func loadRules(from url: URL) throws -> [BlockRule] {
+        do {
+            return try JSONDecoder().decode([BlockRule].self, from: Data(contentsOf: url))
+        } catch let error as CocoaError where error.code == .fileReadNoSuchFile {
+            return []
+        }
+    }
+
+    private func withLock<Result>(at url: URL, _ operation: () throws -> Result) throws -> Result {
+        let descriptor = open(url.path, O_CREAT | O_RDWR | O_CLOEXEC, 0o600)
         guard descriptor >= 0 else { throw currentPOSIXError() }
         defer { close(descriptor) }
         guard flock(descriptor, LOCK_EX) == 0 else { throw currentPOSIXError() }
-
-        let rulesURL = folder.appendingPathComponent("rules.json")
-        let previous: [BlockRule]
-        do {
-            previous = try JSONDecoder().decode([BlockRule].self, from: Data(contentsOf: rulesURL))
-        } catch let error as CocoaError where error.code == .fileReadNoSuchFile {
-            previous = []
-        }
-
-        var rules = previous
-        let result = try change(&rules)
-        if rules != previous {
-            try JSONEncoder().encode(rules).write(
-                to: rulesURL, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication]
-            )
-        }
-        let applications = Set(rules.filter(\.phase.isShielded).map(\.application))
-        let shield: Set<ApplicationToken>? = applications.isEmpty ? nil : applications
-        if settings.shield.applications != shield {
-            settings.shield.applications = shield
-        }
-        return result
+        return try operation()
     }
 
     private func currentPOSIXError() -> POSIXError {
