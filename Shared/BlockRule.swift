@@ -11,6 +11,18 @@ struct BlockRule: Codable, Equatable, Identifiable {
     let application: ApplicationToken
     let dailyMinutes: Int
     var phase: BlockPhase
+    var lastReset: Date?
+
+    mutating func resetIfNeeded(at now: Date) {
+        guard let lastReset else {
+            self.lastReset = now
+            return
+        }
+        guard !Calendar.current.isDate(lastReset, inSameDayAs: now),
+              now > lastReset else { return }
+        phase = dailyMinutes == 0 ? .blocked : .tracking
+        self.lastReset = now
+    }
 
     var dailyActivity: DeviceActivityName { DeviceActivityName("daily-\(id.uuidString)") }
     var bonusActivity: DeviceActivityName { DeviceActivityName("bonus-\(id.uuidString)") }
@@ -19,6 +31,7 @@ struct BlockRule: Codable, Equatable, Identifiable {
         id = UUID()
         self.application = application
         self.dailyMinutes = dailyMinutes
+        lastReset = Date()
         phase = dailyMinutes == 0 ? .blocked : .tracking
     }
 }

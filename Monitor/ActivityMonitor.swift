@@ -6,6 +6,18 @@ final class ActivityMonitor: DeviceActivityMonitor {
     private let store = RuleStore()
     private let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "CapTempsMonitor", category: "monitor")
 
+    override func intervalDidStart(for activity: DeviceActivityName) {
+        super.intervalDidStart(for: activity)
+        do {
+            try store.update { rules in
+                guard let index = rules.firstIndex(where: { $0.dailyActivity == activity }) else { return }
+                rules[index].resetIfNeeded(at: Date())
+            }
+        } catch {
+            logger.error("Could not reset the daily limit. Error code \((error as NSError).code)")
+        }
+    }
+
     override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
         super.eventDidReachThreshold(event, activity: activity)
         switch event {

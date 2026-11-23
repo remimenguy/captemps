@@ -18,9 +18,6 @@ struct BonusController {
                 return rules[index]
             }
 
-            // Free the completed daily activity's slot before registering the bonus.
-            center.stopMonitoring([rule.dailyActivity])
-
             // Keep the shield in place until monitoring for the five minutes is registered.
             var calendar = Calendar(identifier: .gregorian)
             calendar.timeZone = .gmt

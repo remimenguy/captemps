@@ -18,7 +18,7 @@ Open CapTemps, tap **Allow CapTemps**, and select an app in Apple’s activity p
 | --- | --- |
 | **Before the first block** | iOS tracks the selected app against its daily limit. |
 | **First block** | iOS shields the app. Tap **+ 5 Minutes** on the shield to extend usage once for that app. |
-| **After the extension** | The shield returns after five minutes of use or 24 hours, whichever comes first. The block has no automatic reset. |
+| **After the extension** | The shield returns after five minutes of use or 24 hours, whichever comes first. The daily limit and extension reset each day. |
 
 CapTemps supports up to 20 app rules. It has no in-app control for removing a locked rule. The shield continues to work while CapTemps is closed, as long as iOS grants it Screen Time access.
 

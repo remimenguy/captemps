@@ -52,7 +52,7 @@ private struct ContentView: View {
                 Button("Lock Rule", action: addRule)
                 Button("Cancel", role: .cancel) {}
             } message: {
-                Text("This rule will stay locked. You can add five minutes once, after the app is first blocked.")
+                Text("This rule will remain active every day. You can add five minutes once each day after the app is blocked.")
             }
             .alert("CapTemps", isPresented: Binding(
                 get: { errorMessage != nil },
@@ -114,7 +114,7 @@ private struct ContentView: View {
         } header: {
             Text("New Rule")
         } footer: {
-            Text("Choose one app at a time. The daily limit applies until you first reach it. Enter 0 minutes to block immediately.")
+            Text("Choose one app at a time. The limit resets every day. Enter 0 minutes to block immediately.")
         }
     }
 
@@ -189,11 +189,11 @@ private struct ContentView: View {
 
     private func status(for rule: BlockRule) -> String {
         switch rule.phase {
-        case .tracking: "\(rule.dailyMinutes) min per day until the first block"
+        case .tracking: "\(rule.dailyMinutes) min per day"
         case .blocked: "Blocked · one extension available"
         case .settingUpBonus: "Setting up the extension"
         case .bonus: "Extension active · 5 minutes of use within 24 hours"
-        case .locked: "Blocked indefinitely"
+        case .locked: "Blocked until tomorrow"
         }
     }
 }
